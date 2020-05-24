@@ -1,0 +1,16 @@
+<Sysmon schemaversion="4.22">
+   <EventFiltering>
+ <RuleGroup name="" groupRelation="or">
+    <FileCreateStreamHash onmatch="exclude">
+        <!--Chrome Web Browser-->
+        <Image condition="is">C:\Program Files (x86)\Google\Chrome\Application\chrome.exe</Image>
+        <!--Edge Download broker-->
+        <Image condition="is">C:\Windows\system32\browser_broker.exe</Image>
+        <!--Internet Explorer-->
+        <Image condition="is">C:\Program Files\Internet Explorer\iexplore.exe</Image>
+        <!--Outlook Client-->
+        <Image condition="end with">OUTLOOK.EXE</Image>
+    </FileCreateStreamHash>
+</RuleGroup>
+</EventFiltering>
+</Sysmon>
