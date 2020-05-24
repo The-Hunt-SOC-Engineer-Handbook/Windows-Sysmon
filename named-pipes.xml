@@ -1,0 +1,19 @@
+<Sysmon schemaversion="4.22">
+    <EventFiltering>
+        <RuleGroup name="" groupRelation="or">
+            <!--Filter none driver default rule events-->
+            <ProcessCreate onmatch = "include">
+            </ProcessCreate>
+            <ProcessTerminate onmatch = "include">
+            </ProcessTerminate>
+            <FileCreate onmatch = "include">
+            </FileCreate>
+            <FileCreateTime onmatch = "include">
+            </FileCreateTime>
+
+            <!--Include all PipeEvent events-->
+            <PipeEvent onmatch="exclude">
+            </PipeEvent>
+        </RuleGroup>
+    </EventFiltering>
+</Sysmon>
